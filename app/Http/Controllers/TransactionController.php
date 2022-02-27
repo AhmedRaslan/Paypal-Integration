@@ -77,6 +77,8 @@ class TransactionController extends Controller
             $order = new Order;
             $order->order_id = $content->result->id;
             $order->amount = $request->amount;
+            $order->name = $request->name;
+            $order->desc = $request->desc;
             $order->status = 'PENDING';
             $order->save();
         }

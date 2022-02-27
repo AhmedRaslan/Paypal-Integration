@@ -45,6 +45,8 @@ class OrdersController extends Controller
 
         foreach ($records as $record) {
             $order_id = $record->order_id;
+            $name = $record->name;
+            $desc = $record->desc;
             $amount = $record->amount;
             $status = $record->status;
             $created_at = $record->created_at;
@@ -52,6 +54,8 @@ class OrdersController extends Controller
 
             $data_arr[] = array(
                 "order_id" => $order_id,
+                "name" => $name,
+                "desc" => $desc,
                 "amount" => $amount,
                 "status" => $status,
                 "created_at" => $created_at,

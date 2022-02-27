@@ -19,6 +19,8 @@
         <thead>
             <tr>
                 <td>Order ID</td>
+                <td>Name</td>
+                <td>Description</td>
                 <td>Amount</td>
                 <td>Status</td>
                 <td>Created at</td>
@@ -38,6 +40,12 @@
                 ajax: "{{ route('admin.orders') }}",
                 columns: [{
                         data: 'order_id'
+                    },
+                    {
+                        data: 'name'
+                    },
+                    {
+                        data: 'desc'
                     },
                     {
                         data: 'amount'
