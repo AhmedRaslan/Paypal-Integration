@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TransactionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/checkout', [TransactionController::class , 'Payment'])
+    ->name('payment.checkout');
+
+Route::get('/success', [TransactionController::class , 'Success'])
+    ->name('payment.success');
+
+Route::get('/failed', [TransactionController::class , 'Failed'])
+    ->name('payment.failed');
+
